@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace PNT1_TPFinal.Models
+namespace TaskNote.Models
 {
     public class Empresa : Tarjeta
     {
-        private Usuario asignado;
-        private String centroDeCostos;
-        private String empresa;
+        private Guid Id { get; set; }
+        private Usuario asignado { get; set; }
+        private String centroDeCostos { get; set; }
+        private String empresa { get; set; }
     }
 
 }

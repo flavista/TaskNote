@@ -3,16 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace PNT1_TPFinal.Models
+namespace TaskNote.Models
 {
     public class Tarjeta
     {
-        private Estilo estilo;
-        private String titulo;
-        private DateTime fechaInicio;
-        private DateTime fechaFin;
-        private Estado estado;
-        private String comentarios;
+        private Guid Id { get; set; }
+        private Estilo estilo { get; set; }
+        private String titulo { get; set; }
+        private DateTime fechaInicio { get; set; }
+        private DateTime fechaFin { get; set; }
+        private Estado estado { get; set; } 
+        private String comentarios { get; set; }
 
         public void setEstado(Estado estado)
         { 

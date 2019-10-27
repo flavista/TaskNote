@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace PNT1_TPFinal.Models
+namespace TaskNote.Models
 {
     public class Personal : Tarjeta
     {

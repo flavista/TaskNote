@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace PNT1_TPFinal.Models
+namespace TaskNote.Models
 {
     public class Estilo
     {
-        private String font;
-        private String fondo;
-        private String theme;
+        private Guid Id { get; set; }
+        private String font { get; set; }
+        private String fondo { get; set; }
+        private String theme { get; set; }
     }
 }

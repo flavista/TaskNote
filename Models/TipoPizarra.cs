@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections;
 
-namespace PNT1_TPFinal.Models
+namespace TaskNote.Models
 {
     public enum TipoPizarra {Empresa,Personal,Educacion}
 }

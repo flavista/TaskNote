@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-namespace PNT1_TPFinal.Models
+namespace TaskNote.Models
 {
     public class Pizarra
     {
-        private int idPizarra;
-        private TipoPizarra tipoPizarra;
-        private List<Estilo> estilos;
-        private List<Contenedor> contenedor;
-        private List<Usuario> usuario;
+        private Guid Id { get; set; }
+        private int idPizarra { get; set; }
+        private TipoPizarra tipoPizarra { get; set; }
+        private List<Estilo> estilos { get; set; }
+        private List<Contenedor> contenedor { get; set; }
+        private List<Usuario> usuario { get; set; } 
     }
 }

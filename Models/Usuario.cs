@@ -1,16 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace PNT1_TPFinal.Models
+namespace TaskNote.Models
 {
     public class Usuario
     {
-        private String nombreApellido;
-        private int idUsuario;
-        private String email;
-        private DateTime nacimiento;
-        private String nombreUsuario;
-        private String contrasenia;
-        private List<Pizarra> pizarras;
+        private Guid Id { get; set; }
+        private String nombreApellido { get; set; }
+        private int idUsuario { get; set; }
+        private String email { get; set; }
+        private DateTime nacimiento { get; set; }
+        private String nombreUsuario { get; set; }
+        private String contrasenia { get; set; }
+        private List<Pizarra> pizarras { get; set; }
     }
+
+
 }

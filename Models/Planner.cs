@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace PNT1_TPFinal.Models
+namespace TaskNote.Models
 {
     public class Planner
     {
-        private List<Usuario> usuario;
+        private Guid Id { get; set; }
+        private List<Usuario> usuario { get; set; }
     }
 }
