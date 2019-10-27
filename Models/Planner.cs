@@ -1,10 +1,10 @@
 ﻿using System;
-using System.Collections;
+using System.Collections.Generic;
 
 namespace PNT1_TPFinal.Models
 {
     public class Planner
     {
-        private ArrayList usuario;
+        private List<Usuario> usuario;
     }
 }

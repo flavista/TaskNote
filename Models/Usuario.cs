@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections;
+using System.Collections.Generic;
 
 namespace PNT1_TPFinal.Models
 {
@@ -11,6 +11,6 @@ namespace PNT1_TPFinal.Models
         private DateTime nacimiento;
         private String nombreUsuario;
         private String contrasenia;
-        private ArrayList pizarras;
+        private List<Pizarra> pizarras;
     }
 }
