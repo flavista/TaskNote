@@ -2,18 +2,19 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
 
 namespace TaskNote.Models
 {
     public class Tarjeta
     {
-        private Guid Id { get; set; }
-        private Estilo estilo { get; set; }
-        private String titulo { get; set; }
-        private DateTime fechaInicio { get; set; }
-        private DateTime fechaFin { get; set; }
-        private Estado estado { get; set; } 
-        private String comentarios { get; set; }
+        [Key] public Guid Id { get; set; }
+        public Estilo estilo { get; set; }
+        public String titulo { get; set; }
+        public DateTime fechaInicio { get; set; }
+        public DateTime fechaFin { get; set; }
+        public Estado estado { get; set; }
+        public String comentarios { get; set; }
 
         public void setEstado(Estado estado)
         { 

@@ -2,13 +2,20 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
+
+
+
 
 namespace TaskNote.Models
 {
     public class Contenedor
     {
-        private Guid Id;
-        private String nombre;
-        private List<Tarjeta> tarjetas;
+        [Key] public Guid ID { get; set; }
+        public String nombre { get; set; }
+        public List<Tarjeta> tarjetas { get; set; }
+
+        public Guid PizarraId;
+        public virtual Pizarra Pizarra { get; set; }
     }
 }

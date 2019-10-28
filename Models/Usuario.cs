@@ -1,18 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+
 
 namespace TaskNote.Models
 {
     public class Usuario
     {
-        private Guid Id { get; set; }
-        private String nombreApellido { get; set; }
-        private int idUsuario { get; set; }
-        private String email { get; set; }
-        private DateTime nacimiento { get; set; }
-        private String nombreUsuario { get; set; }
-        private String contrasenia { get; set; }
-        private List<Pizarra> pizarras { get; set; }
+        [Key] public Guid ID { get; set; }
+        public String nombreApellido { get; set; }
+        public int idUsuario { get; set; }
+        public String email { get; set; }
+        public DateTime nacimiento { get; set; }
+        public String nombreUsuario { get; set; }
+        public String contrasenia { get; set; }
+
+        public Guid PizarraId;
+        public virtual Pizarra Pizarra { get; set; }
     }
 
 

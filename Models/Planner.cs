@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+
 
 namespace TaskNote.Models
 {
     public class Planner
     {
-        private Guid Id { get; set; }
-        private List<Usuario> usuario { get; set; }
+        [Key] public Guid Id { get; set; }
+        public List<Usuario> usuario { get; set; }
     }
 }

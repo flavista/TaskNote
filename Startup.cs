@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using TaskNote.Database;
+using TaskNote.Models;
 
 namespace TaskNote
 {
@@ -33,11 +33,12 @@ namespace TaskNote
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-            services.AddDbContext<TaskNoteDbContext>(options =>
-             //       options.UseInMemoryDatabase("TaskNoteDB"));
-            options.UseSqlServer(Configuration.GetConnectionString("TaskNoteDbContext")));
-
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
+            services.AddDbContext<TaskNoteContext>(options =>
+            options.UseSqlServer(Configuration.GetConnectionString("TaskNoteContext")));
+
+            
 
         }
 

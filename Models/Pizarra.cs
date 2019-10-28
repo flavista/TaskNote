@@ -1,14 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+
 namespace TaskNote.Models
+
 {
     public class Pizarra
     {
-        private Guid Id { get; set; }
-        private int idPizarra { get; set; }
-        private TipoPizarra tipoPizarra { get; set; }
-        private List<Estilo> estilos { get; set; }
-        private List<Contenedor> contenedor { get; set; }
-        private List<Usuario> usuario { get; set; } 
+        [Key] public Guid Id { get; set; }
+        public TipoPizarra tipoPizarra { get; set; }
+        public List<Estilo> estilos { get; set; }
+        public List<Contenedor> contenedor { get; set; }
+        public List<Usuario> usuario { get; set; }
     }
 }
