@@ -64,7 +64,7 @@ namespace TaskNote
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller=Pizarras}/{action=Index}/{id?}");
             });
         }
     }
