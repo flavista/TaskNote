@@ -11,7 +11,7 @@ namespace TaskNote.Models
 {
     public class Contenedor
     {
-        [Key] public Guid ID { get; set; }
+        public Guid ID { get; set; }
         public String nombre { get; set; }
         public List<Tarjeta> tarjetas { get; set; }
 

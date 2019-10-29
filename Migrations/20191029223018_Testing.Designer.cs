@@ -10,8 +10,8 @@ using TaskNote.Models;
 namespace TaskNote.Migrations
 {
     [DbContext(typeof(TaskNoteContext))]
-    [Migration("20191028002707_Initial")]
-    partial class Initial
+    [Migration("20191029223018_Testing")]
+    partial class Testing
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -26,13 +26,13 @@ namespace TaskNote.Migrations
                     b.Property<Guid>("ID")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<Guid?>("PizarraId1");
+                    b.Property<Guid?>("PizarraID");
 
                     b.Property<string>("nombre");
 
                     b.HasKey("ID");
 
-                    b.HasIndex("PizarraId1");
+                    b.HasIndex("PizarraID");
 
                     b.ToTable("Contenedors");
                 });
@@ -42,7 +42,7 @@ namespace TaskNote.Migrations
                     b.Property<Guid>("ID")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<Guid?>("PizarraId1");
+                    b.Property<Guid?>("PizarraID");
 
                     b.Property<string>("fondo");
 
@@ -52,36 +52,37 @@ namespace TaskNote.Migrations
 
                     b.HasKey("ID");
 
-                    b.HasIndex("PizarraId1");
+                    b.HasIndex("PizarraID");
 
                     b.ToTable("Estilos");
                 });
 
             modelBuilder.Entity("TaskNote.Models.Pizarra", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<Guid>("ID")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int>("tipoPizarra");
+                    b.Property<string>("TipoPizarra")
+                        .IsRequired();
 
-                    b.HasKey("Id");
+                    b.HasKey("ID");
 
                     b.ToTable("Pizarras");
                 });
 
             modelBuilder.Entity("TaskNote.Models.Planner", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<Guid>("ID")
                         .ValueGeneratedOnAdd();
 
-                    b.HasKey("Id");
+                    b.HasKey("ID");
 
                     b.ToTable("Planners");
                 });
 
             modelBuilder.Entity("TaskNote.Models.Tarjeta", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<Guid>("ID")
                         .ValueGeneratedOnAdd();
 
                     b.Property<Guid?>("ContenedorID");
@@ -101,7 +102,7 @@ namespace TaskNote.Migrations
 
                     b.Property<string>("titulo");
 
-                    b.HasKey("Id");
+                    b.HasKey("ID");
 
                     b.HasIndex("ContenedorID");
 
@@ -117,9 +118,9 @@ namespace TaskNote.Migrations
                     b.Property<Guid>("ID")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<Guid?>("PizarraId1");
+                    b.Property<Guid?>("PizarraID");
 
-                    b.Property<Guid?>("PlannerId");
+                    b.Property<Guid?>("PlannerID");
 
                     b.Property<string>("contrasenia");
 
@@ -135,9 +136,9 @@ namespace TaskNote.Migrations
 
                     b.HasKey("ID");
 
-                    b.HasIndex("PizarraId1");
+                    b.HasIndex("PizarraID");
 
-                    b.HasIndex("PlannerId");
+                    b.HasIndex("PlannerID");
 
                     b.ToTable("Usuarios");
                 });
@@ -183,15 +184,15 @@ namespace TaskNote.Migrations
             modelBuilder.Entity("TaskNote.Models.Contenedor", b =>
                 {
                     b.HasOne("TaskNote.Models.Pizarra", "Pizarra")
-                        .WithMany("contenedor")
-                        .HasForeignKey("PizarraId1");
+                        .WithMany("Contenedor")
+                        .HasForeignKey("PizarraID");
                 });
 
             modelBuilder.Entity("TaskNote.Models.Estilo", b =>
                 {
                     b.HasOne("TaskNote.Models.Pizarra", "Pizarra")
-                        .WithMany("estilos")
-                        .HasForeignKey("PizarraId1");
+                        .WithMany("Estilos")
+                        .HasForeignKey("PizarraID");
                 });
 
             modelBuilder.Entity("TaskNote.Models.Tarjeta", b =>
@@ -208,12 +209,12 @@ namespace TaskNote.Migrations
             modelBuilder.Entity("TaskNote.Models.Usuario", b =>
                 {
                     b.HasOne("TaskNote.Models.Pizarra", "Pizarra")
-                        .WithMany("usuario")
-                        .HasForeignKey("PizarraId1");
+                        .WithMany("Usuario")
+                        .HasForeignKey("PizarraID");
 
                     b.HasOne("TaskNote.Models.Planner")
                         .WithMany("usuario")
-                        .HasForeignKey("PlannerId");
+                        .HasForeignKey("PlannerID");
                 });
 
             modelBuilder.Entity("TaskNote.Models.Educacion", b =>

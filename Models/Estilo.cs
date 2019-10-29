@@ -8,7 +8,7 @@ namespace TaskNote.Models
 {
     public class Estilo
     {
-        [Key] public Guid ID { get; set; }
+        public Guid ID { get; set; }
         public String font { get; set; }
         public String fondo { get; set; }
         public String theme { get; set; }

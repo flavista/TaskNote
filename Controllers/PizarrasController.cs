@@ -33,7 +33,7 @@ namespace TaskNote.Controllers
             }
 
             var pizarra = await _context.Pizarras
-                .FirstOrDefaultAsync(m => m.Id == id);
+                .FirstOrDefaultAsync(m => m.ID == id);
             if (pizarra == null)
             {
                 return NotFound();
@@ -53,11 +53,11 @@ namespace TaskNote.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,tipoPizarra")] Pizarra pizarra)
+        public async Task<IActionResult> Create([Bind("ID,TipoPizarra")] Pizarra pizarra)
         {
             if (ModelState.IsValid)
             {
-                pizarra.Id = Guid.NewGuid();
+                pizarra.ID = Guid.NewGuid();
                 _context.Add(pizarra);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -86,9 +86,9 @@ namespace TaskNote.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(Guid id, [Bind("Id,tipoPizarra")] Pizarra pizarra)
+        public async Task<IActionResult> Edit(Guid id, [Bind("ID,TipoPizarra")] Pizarra pizarra)
         {
-            if (id != pizarra.Id)
+            if (id != pizarra.ID)
             {
                 return NotFound();
             }
@@ -102,7 +102,7 @@ namespace TaskNote.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!PizarraExists(pizarra.Id))
+                    if (!PizarraExists(pizarra.ID))
                     {
                         return NotFound();
                     }
@@ -125,7 +125,7 @@ namespace TaskNote.Controllers
             }
 
             var pizarra = await _context.Pizarras
-                .FirstOrDefaultAsync(m => m.Id == id);
+                .FirstOrDefaultAsync(m => m.ID == id);
             if (pizarra == null)
             {
                 return NotFound();
@@ -147,7 +147,7 @@ namespace TaskNote.Controllers
 
         private bool PizarraExists(Guid id)
         {
-            return _context.Pizarras.Any(e => e.Id == id);
+            return _context.Pizarras.Any(e => e.ID == id);
         }
     }
 }

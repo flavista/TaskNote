@@ -8,7 +8,7 @@ namespace TaskNote.Models
 {
     public class Tarjeta
     {
-        [Key] public Guid Id { get; set; }
+        public Guid ID { get; set; }
         public Estilo estilo { get; set; }
         public String titulo { get; set; }
         public DateTime fechaInicio { get; set; }

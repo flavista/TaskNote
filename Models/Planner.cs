@@ -7,7 +7,7 @@ namespace TaskNote.Models
 {
     public class Planner
     {
-        [Key] public Guid Id { get; set; }
+        public Guid ID { get; set; }
         public List<Usuario> usuario { get; set; }
     }
 }

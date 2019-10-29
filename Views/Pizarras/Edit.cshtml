@@ -12,11 +12,13 @@
     <div class="col-md-4">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Id" />
+            <input type="hidden" asp-for="ID" />
             <div class="form-group">
-                <label asp-for="tipoPizarra" class="control-label"></label>
-                <select asp-for="tipoPizarra" class="form-control"></select>
-                <span asp-validation-for="tipoPizarra" class="text-danger"></span>
+                <label asp-for="TipoPizarra" class="control-label"></label>
+                <select asp-for="TipoPizarra" asp-items="Html.GetEnumSelectList<TipoPizarra>()" class="form-control">
+                    <option selected="selected" value="">Please select</option>
+                </select>
+                <span asp-validation-for="TipoPizarra" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />

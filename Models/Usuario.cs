@@ -7,7 +7,7 @@ namespace TaskNote.Models
 {
     public class Usuario
     {
-        [Key] public Guid ID { get; set; }
+        public Guid ID { get; set; }
         public String nombreApellido { get; set; }
         public int idUsuario { get; set; }
         public String email { get; set; }

@@ -25,15 +25,15 @@ namespace TaskNote.Controllers
         }
 
         // GET: Tarjetas/Details/5
-        public async Task<IActionResult> Details(Guid? id)
+        public async Task<IActionResult> Details(Guid? ID)
         {
-            if (id == null)
+            if (ID == null)
             {
                 return NotFound();
             }
 
             var tarjeta = await _context.Tarjetas
-                .FirstOrDefaultAsync(m => m.Id == id);
+                .FirstOrDefaultAsync(m => m.ID == ID);
             if (tarjeta == null)
             {
                 return NotFound();
@@ -57,7 +57,7 @@ namespace TaskNote.Controllers
         {
             if (ModelState.IsValid)
             {
-                tarjeta.Id = Guid.NewGuid();
+                tarjeta.ID = Guid.NewGuid();
                 _context.Add(tarjeta);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -66,14 +66,14 @@ namespace TaskNote.Controllers
         }
 
         // GET: Tarjetas/Edit/5
-        public async Task<IActionResult> Edit(Guid? id)
+        public async Task<IActionResult> Edit(Guid? ID)
         {
-            if (id == null)
+            if (ID == null)
             {
                 return NotFound();
             }
 
-            var tarjeta = await _context.Tarjetas.FindAsync(id);
+            var tarjeta = await _context.Tarjetas.FindAsync(ID);
             if (tarjeta == null)
             {
                 return NotFound();
@@ -88,7 +88,7 @@ namespace TaskNote.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(Guid id, [Bind("Id,titulo,fechaInicio,fechaFin,estado,comentarios")] Tarjeta tarjeta)
         {
-            if (id != tarjeta.Id)
+            if (id != tarjeta.ID)
             {
                 return NotFound();
             }
@@ -102,7 +102,7 @@ namespace TaskNote.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!TarjetaExists(tarjeta.Id))
+                    if (!TarjetaExists(tarjeta.ID))
                     {
                         return NotFound();
                     }
@@ -117,15 +117,15 @@ namespace TaskNote.Controllers
         }
 
         // GET: Tarjetas/Delete/5
-        public async Task<IActionResult> Delete(Guid? id)
+        public async Task<IActionResult> Delete(Guid? ID)
         {
-            if (id == null)
+            if (ID == null)
             {
                 return NotFound();
             }
 
             var tarjeta = await _context.Tarjetas
-                .FirstOrDefaultAsync(m => m.Id == id);
+                .FirstOrDefaultAsync(m => m.ID == ID);
             if (tarjeta == null)
             {
                 return NotFound();
@@ -137,17 +137,17 @@ namespace TaskNote.Controllers
         // POST: Tarjetas/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(Guid id)
+        public async Task<IActionResult> DeleteConfirmed(Guid ID)
         {
-            var tarjeta = await _context.Tarjetas.FindAsync(id);
+            var tarjeta = await _context.Tarjetas.FindAsync(ID);
             _context.Tarjetas.Remove(tarjeta);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool TarjetaExists(Guid id)
+        private bool TarjetaExists(Guid ID)
         {
-            return _context.Tarjetas.Any(e => e.Id == id);
+            return _context.Tarjetas.Any(e => e.ID == ID);
         }
     }
 }

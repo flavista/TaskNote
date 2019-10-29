@@ -9,7 +9,7 @@ namespace TaskNote.Models
 {
     public class Educacion : Tarjeta
     {
-        [Key] public Guid Id { get; set; }
+        public Guid ID { get; set; }
         public Usuario asignado { get; set; }
         public String establecimiento { get; set; }
         public String aula { get; set; }

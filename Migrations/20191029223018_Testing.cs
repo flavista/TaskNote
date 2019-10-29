@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace TaskNote.Migrations
 {
-    public partial class Initial : Migration
+    public partial class Testing : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -11,23 +11,23 @@ namespace TaskNote.Migrations
                 name: "Pizarras",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(nullable: false),
-                    tipoPizarra = table.Column<int>(nullable: false)
+                    ID = table.Column<Guid>(nullable: false),
+                    TipoPizarra = table.Column<string>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Pizarras", x => x.Id);
+                    table.PrimaryKey("PK_Pizarras", x => x.ID);
                 });
 
             migrationBuilder.CreateTable(
                 name: "Planners",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(nullable: false)
+                    ID = table.Column<Guid>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Planners", x => x.Id);
+                    table.PrimaryKey("PK_Planners", x => x.ID);
                 });
 
             migrationBuilder.CreateTable(
@@ -36,16 +36,16 @@ namespace TaskNote.Migrations
                 {
                     ID = table.Column<Guid>(nullable: false),
                     nombre = table.Column<string>(nullable: true),
-                    PizarraId1 = table.Column<Guid>(nullable: true)
+                    PizarraID = table.Column<Guid>(nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Contenedors", x => x.ID);
                     table.ForeignKey(
-                        name: "FK_Contenedors_Pizarras_PizarraId1",
-                        column: x => x.PizarraId1,
+                        name: "FK_Contenedors_Pizarras_PizarraID",
+                        column: x => x.PizarraID,
                         principalTable: "Pizarras",
-                        principalColumn: "Id",
+                        principalColumn: "ID",
                         onDelete: ReferentialAction.Restrict);
                 });
 
@@ -57,16 +57,16 @@ namespace TaskNote.Migrations
                     font = table.Column<string>(nullable: true),
                     fondo = table.Column<string>(nullable: true),
                     theme = table.Column<string>(nullable: true),
-                    PizarraId1 = table.Column<Guid>(nullable: true)
+                    PizarraID = table.Column<Guid>(nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Estilos", x => x.ID);
                     table.ForeignKey(
-                        name: "FK_Estilos_Pizarras_PizarraId1",
-                        column: x => x.PizarraId1,
+                        name: "FK_Estilos_Pizarras_PizarraID",
+                        column: x => x.PizarraID,
                         principalTable: "Pizarras",
-                        principalColumn: "Id",
+                        principalColumn: "ID",
                         onDelete: ReferentialAction.Restrict);
                 });
 
@@ -81,23 +81,23 @@ namespace TaskNote.Migrations
                     nacimiento = table.Column<DateTime>(nullable: false),
                     nombreUsuario = table.Column<string>(nullable: true),
                     contrasenia = table.Column<string>(nullable: true),
-                    PizarraId1 = table.Column<Guid>(nullable: true),
-                    PlannerId = table.Column<Guid>(nullable: true)
+                    PizarraID = table.Column<Guid>(nullable: true),
+                    PlannerID = table.Column<Guid>(nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Usuarios", x => x.ID);
                     table.ForeignKey(
-                        name: "FK_Usuarios_Pizarras_PizarraId1",
-                        column: x => x.PizarraId1,
+                        name: "FK_Usuarios_Pizarras_PizarraID",
+                        column: x => x.PizarraID,
                         principalTable: "Pizarras",
-                        principalColumn: "Id",
+                        principalColumn: "ID",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_Usuarios_Planners_PlannerId",
-                        column: x => x.PlannerId,
+                        name: "FK_Usuarios_Planners_PlannerID",
+                        column: x => x.PlannerID,
                         principalTable: "Planners",
-                        principalColumn: "Id",
+                        principalColumn: "ID",
                         onDelete: ReferentialAction.Restrict);
                 });
 
@@ -105,7 +105,7 @@ namespace TaskNote.Migrations
                 name: "Tarjetas",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(nullable: false),
+                    ID = table.Column<Guid>(nullable: false),
                     estiloID = table.Column<Guid>(nullable: true),
                     titulo = table.Column<string>(nullable: true),
                     fechaInicio = table.Column<DateTime>(nullable: false),
@@ -123,7 +123,7 @@ namespace TaskNote.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Tarjetas", x => x.Id);
+                    table.PrimaryKey("PK_Tarjetas", x => x.ID);
                     table.ForeignKey(
                         name: "FK_Tarjetas_Usuarios_asignadoID",
                         column: x => x.asignadoID,
@@ -151,14 +151,14 @@ namespace TaskNote.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Contenedors_PizarraId1",
+                name: "IX_Contenedors_PizarraID",
                 table: "Contenedors",
-                column: "PizarraId1");
+                column: "PizarraID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Estilos_PizarraId1",
+                name: "IX_Estilos_PizarraID",
                 table: "Estilos",
-                column: "PizarraId1");
+                column: "PizarraID");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Tarjetas_asignadoID",
@@ -181,14 +181,14 @@ namespace TaskNote.Migrations
                 column: "estiloID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Usuarios_PizarraId1",
+                name: "IX_Usuarios_PizarraID",
                 table: "Usuarios",
-                column: "PizarraId1");
+                column: "PizarraID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Usuarios_PlannerId",
+                name: "IX_Usuarios_PlannerID",
                 table: "Usuarios",
-                column: "PlannerId");
+                column: "PlannerID");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

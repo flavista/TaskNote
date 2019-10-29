@@ -12,6 +12,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using TaskNote.Models;
 
+
 namespace TaskNote
 {
     public class Startup
@@ -37,8 +38,6 @@ namespace TaskNote
 
             services.AddDbContext<TaskNoteContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("TaskNoteContext")));
-
-            
 
         }
 
