@@ -9,9 +9,9 @@ namespace TaskNote.Models
     public class Estilo
     {
         public Guid ID { get; set; }
-        public String font { get; set; }
-        public String fondo { get; set; }
-        public String theme { get; set; }
+        public String Font { get; set; }
+        public String Fondo { get; set; }
+        public String Theme { get; set; }
 
         public Guid PizarraId;
         public virtual Pizarra Pizarra { get; set; }

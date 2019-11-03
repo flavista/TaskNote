@@ -13,22 +13,22 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.nombreApellido)
+                @Html.DisplayNameFor(model => model.NombreApellido)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.idUsuario)
+                @Html.DisplayNameFor(model => model.IdUsuario)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.email)
+                @Html.DisplayNameFor(model => model.Email)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.nacimiento)
+                @Html.DisplayNameFor(model => model.Nacimiento)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.nombreUsuario)
+                @Html.DisplayNameFor(model => model.NombreUsuario)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.contrasenia)
+                @Html.DisplayNameFor(model => model.Contrasenia)
             </th>
             <th></th>
         </tr>
@@ -37,22 +37,22 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.nombreApellido)
+                @Html.DisplayFor(modelItem => item.NombreApellido)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.idUsuario)
+                @Html.DisplayFor(modelItem => item.IdUsuario)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.email)
+                @Html.DisplayFor(modelItem => item.Email)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.nacimiento)
+                @Html.DisplayFor(modelItem => item.Nacimiento)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.nombreUsuario)
+                @Html.DisplayFor(modelItem => item.NombreUsuario)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.contrasenia)
+                @Html.DisplayFor(modelItem => item.Contrasenia)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |

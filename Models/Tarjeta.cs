@@ -9,17 +9,16 @@ namespace TaskNote.Models
     public class Tarjeta
     {
         public Guid ID { get; set; }
-        public Estilo estilo { get; set; }
-        public String titulo { get; set; }
-        public DateTime fechaInicio { get; set; }
-        public DateTime fechaFin { get; set; }
-        public Estado estado { get; set; }
-        public String comentarios { get; set; }
+        public Estilo Estilo { get; set; }
+        public String Titulo { get; set; }
+        public DateTime FechaInicio { get; set; }
+        public DateTime FechaFin { get; set; }
+        public Estado Estado { get; set; }
+        public String Comentarios { get; set; }
 
-        public void setEstado(Estado estado)
-        { 
-            this.estado = estado;
-        }
+        public Guid ContenedorID;
+        public virtual Contenedor Contenedor { get; set; }
+        
 
     }
 

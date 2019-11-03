@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<!-- saved from url=(0145)https://trello-attachments.s3.amazonaws.com/5d93ce15a75d6b0519edd00d/5da3390fb157912cb9d709d8/354a02979d88a9cc49025af3756d0f45/Navbar_05_(3).html -->
+<html lang="es"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>TaskNote</title>
+    <!-- este le da el formato de navbar-->
+    <link rel="stylesheet" href="./Navbar_05 (3)_files/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      
+    <!--estilo de botón circular-->
+    <style type="text/css"> 
+            .btn-circle.btn-md { 
+                width: 50px; 
+                height: 50px; 
+                padding: 7px 10px; 
+                border-radius: 25px; 
+                font-size: 16px; 
+                text-align: center; 
+            } 
+    </style> 
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light text-center">
+        <div style="width:120px">
+            <a class="navbar-brand" href="https://trello-attachments.s3.amazonaws.com/5d93ce15a75d6b0519edd00d/5da3390fb157912cb9d709d8/354a02979d88a9cc49025af3756d0f45/Navbar_05_(3).html#"><img src="./Navbar_05 (3)_files/TaskNote-LogoGris.png" style="width: 100%"></a>
+        </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+            <ul class="navbar-nav ml-auto mx-auto">
+                <li class="nav-item active">
+                    <div> <!--20 botones es lo max que entra en 1 fila en mi pantalla completa-->
+                        <button id="BP1" type="button" class="btn btn-secondary btn-circle btn-md" onmouseover="tachar()" onmouseout="destachar()" title="Quitar participante">NA</button>
+                        <button id="BP2" type="button" class="btn btn-secondary btn-circle btn-md" onmouseover="tachar()" onmouseout="destachar()">NA</button>
+                        <button id="BP3" type="button" class="btn btn-secondary btn-circle btn-md">NA</button>
+                        <button id="BP4" type="button" class="btn btn-secondary btn-circle btn-md">NA</button>                
+                    </div>
+                </li>
+            </ul>
+            <!--
+            </div> -->
+
+            <div class="btn-group dropleft" style="float:right">
+                <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    NA
+                </button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="Login.html">Cerrar sesion</a>
+                    <a class="dropdown-item" href="ConfigUsuario.html">Editar perfil</a>
+                </div>
+            </div>
+            <!-- Sin boton, se me va el menu fuera de la pantalla
+            <div class="nav-item dropdown" style="float:right">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    NA
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Cerrar sesion</a>
+                    <a class="dropdown-item" href="#">Editar perfil</a>
+                </div>
+            </div>
+            -->
+        </div>
+
+
+
+        
+    </nav>
+
+
+    <!--lo agregue de la web de bootstrap porque sino no me andaba el dropdown del navbar https://getbootstrap.com/docs/4.3/getting-started/download/ -->
+    <script src="./Navbar_05 (3)_files/jquery-3.3.1.slim.min.js.descarga" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="./Navbar_05 (3)_files/popper.min.js.descarga" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="./Navbar_05 (3)_files/bootstrap.min.js.descarga" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        function tachar(){
+            var boton=$("#BP1");
+            boton.css({
+                'color': 'red',
+				'text-decoration': 'line-through'
+                });
+        }
+        function destachar(){
+            var boton=$("#BP1");
+            boton.css({
+                'color': 'white',
+				'text-decoration': 'none'
+                });
+        }
+    </script>
+
+
+</body></html>

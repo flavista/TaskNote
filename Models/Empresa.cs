@@ -9,9 +9,8 @@ namespace TaskNote.Models
     public class Empresa : Tarjeta
     {
         public Guid ID { get; set; }
-        public Usuario asignado { get; set; }
-        public String centroDeCostos { get; set; }
-        public String empresa { get; set; }
+        public Usuario Asignado { get; set; }
+        public String CentroDeCostos { get; set; }
     }
 
 }

@@ -196,7 +196,7 @@ namespace TaskNote.Migrations
             modelBuilder.Entity("TaskNote.Models.Tarjeta", b =>
                 {
                     b.HasOne("TaskNote.Models.Contenedor")
-                        .WithMany("tarjetas")
+                        .WithMany("Tarjetas")
                         .HasForeignKey("ContenedorID");
 
                     b.HasOne("TaskNote.Models.Estilo", "estilo")
