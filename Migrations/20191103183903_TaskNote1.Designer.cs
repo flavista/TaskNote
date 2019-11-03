@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TaskNote.Models;
 
 namespace TaskNote.Migrations
 {
     [DbContext(typeof(TaskNoteContext))]
-    partial class TaskNoteContextModelSnapshot : ModelSnapshot
+    [Migration("20191103183903_TaskNote1")]
+    partial class TaskNote1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

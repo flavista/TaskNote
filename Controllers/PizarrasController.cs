@@ -145,6 +145,15 @@ namespace TaskNote.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        public IActionResult HomeOverviewUsuario()
+        {
+            return View();
+        }
+
+ 
+
+
+
         private bool PizarraExists(Guid id)
         {
             return _context.Pizarras.Any(e => e.ID == id);

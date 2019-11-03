@@ -145,6 +145,10 @@ namespace TaskNote.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        public IActionResult OverviewContenedores()
+        {
+            return View();
+        }
         private bool ContenedorExists(Guid id)
         {
             return _context.Contenedors.Any(e => e.ID == id);
