@@ -338,3 +338,5 @@ ASALocalRun/
 
 # BeatPulse healthcheck temp database
 healthchecksdb
+/Migrations/20191101003724_TaskNote.cs
+/Migrations/20191101003724_TaskNote.Designer.cs
