@@ -11,7 +11,7 @@ namespace TaskNote.Models
         public string NombreUsuario { get; set; }
 
         [DataType(DataType.Password)]
-        public string Contrasenia { get; set; }
+        public string Password { get; set; }
 
         public string ReturnUrl { get; set; }
 

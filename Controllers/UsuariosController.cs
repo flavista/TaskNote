@@ -21,7 +21,8 @@ namespace TaskNote.Controllers
         // GET: Usuarios
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Usuarios.ToListAsync());
+            var taskNoteContext = _context.Usuarios.Include(u => u.Pizarra);
+            return View(await taskNoteContext.ToListAsync());
         }
 
         // GET: Usuarios/Details/5
@@ -33,6 +34,7 @@ namespace TaskNote.Controllers
             }
 
             var usuario = await _context.Usuarios
+                .Include(u => u.Pizarra)
                 .FirstOrDefaultAsync(m => m.ID == id);
             if (usuario == null)
             {
@@ -45,6 +47,7 @@ namespace TaskNote.Controllers
         // GET: Usuarios/Create
         public IActionResult Create()
         {
+            ViewData["PizarraId"] = new SelectList(_context.Pizarras, "ID", "ID");
             return View();
         }
 
@@ -53,7 +56,7 @@ namespace TaskNote.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,NombreApellido,IdUsuario,Email,Nacimiento,NombreUsuario,Contrasenia")] Usuario usuario)
+        public async Task<IActionResult> Create([Bind("ID,NombreApellido,Email,Nacimiento,NombreUsuario,Password,PizarraId")] Usuario usuario)
         {
             if (ModelState.IsValid)
             {
@@ -62,6 +65,7 @@ namespace TaskNote.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["PizarraId"] = new SelectList(_context.Pizarras, "ID", "ID", usuario.PizarraId);
             return View(usuario);
         }
 
@@ -78,6 +82,7 @@ namespace TaskNote.Controllers
             {
                 return NotFound();
             }
+            ViewData["PizarraId"] = new SelectList(_context.Pizarras, "ID", "ID", usuario.PizarraId);
             return View(usuario);
         }
 
@@ -86,7 +91,7 @@ namespace TaskNote.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(Guid id, [Bind("ID,NombreApellido,IdUsuario,Email,Nacimiento,NombreUsuario,Contrasenia")] Usuario usuario)
+        public async Task<IActionResult> Edit(Guid id, [Bind("ID,NombreApellido,Email,Nacimiento,NombreUsuario,Password,PizarraId")] Usuario usuario)
         {
             if (id != usuario.ID)
             {
@@ -113,6 +118,7 @@ namespace TaskNote.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["PizarraId"] = new SelectList(_context.Pizarras, "ID", "ID", usuario.PizarraId);
             return View(usuario);
         }
 
@@ -125,6 +131,7 @@ namespace TaskNote.Controllers
             }
 
             var usuario = await _context.Usuarios
+                .Include(u => u.Pizarra)
                 .FirstOrDefaultAsync(m => m.ID == id);
             if (usuario == null)
             {

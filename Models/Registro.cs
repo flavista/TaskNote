@@ -12,9 +12,9 @@ namespace TaskNote.Models
         public string NombreUsuario { get; set; }
 
         [Required, DataType(DataType.Password)]
-        public string Contrasenia { get; set; }
+        public string Password { get; set; }
 
-        [DataType(DataType.Password), Compare(nameof(Contrasenia))]
+        [DataType(DataType.Password), Compare(nameof(Password))]
         public string ConfirmarContrasenia { get; set; }
     }
 }
