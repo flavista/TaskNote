@@ -15,7 +15,7 @@ namespace TaskNote.Models
         public String NombreUsuario { get; set; }
         public String Contrasenia { get; set; }
 
-        public Guid PizarraId;
+        public Guid PizarraId { get; set; }
         public virtual Pizarra Pizarra { get; set; }
     }
 

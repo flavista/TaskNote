@@ -16,7 +16,7 @@ namespace TaskNote.Models
         public Estado Estado { get; set; }
         public String Comentarios { get; set; }
 
-        public Guid ContenedorID;
+        public Guid ContenedorID { get; set; }
         public virtual Contenedor Contenedor { get; set; }
         
 

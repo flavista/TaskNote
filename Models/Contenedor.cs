@@ -15,7 +15,7 @@ namespace TaskNote.Models
         public String Nombre { get; set; }
         public List<Tarjeta> Tarjetas { get; set; }
 
-        public Guid PizarraId;
+        public Guid PizarraId { get; set; }
         public virtual Pizarra Pizarra { get; set; }
     }
 }
