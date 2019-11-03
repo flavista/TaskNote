@@ -31,17 +31,10 @@
                         </span>
                     </div>
 
-                    <div class="container-login100-form-btn">
-                        <button class="login100-form-btn">
-                            Ingresar
-                        </button>
-                    </div>
-                    @Html.ActionLink("Crear la cuenta", "Registrar", "usuarios", null, new { @class = "txt2" })
-                    <!--
-    
-            <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
-        
-        -->
+                    @Html.ActionLink("Ingresar", "HomeOverviewUsuario", "Pizarras", null, new { @class = "btn login100-form-btn" })
+
+                    @Html.ActionLink("Crear cuenta", "Registrar", "Usuarios", null, new { @class = "txt2" })
+
                 </form>
             </div>
         </div>

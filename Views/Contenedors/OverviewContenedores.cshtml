@@ -45,8 +45,9 @@
                     NA
                 </button>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" href="Login.html">Cerrar sesion</a>
-                    <a class="dropdown-item" href="ConfigUsuario.html">Editar perfil</a>
+                    <!--<a class="dropdown-item" href="Login.html">Cerrar sesion</a>-->
+                    @Html.ActionLink("Cerrar sesion", "Login", "usuarios", null, new { @class = "dropdown-item" })
+                    @Html.ActionLink("Editar perfil", "ActualizacionUsuario", "usuarios", null, new { @class = "dropdown-item" })
                 </div>
             </div>
     

@@ -53,9 +53,8 @@
 
 
                     <div class="wrap-input100 validate-input">
-                        <button class="login100-form-btn" type="submit">
-                            Registrarse
-                        </button>
+                        <!--<button class="login100-form-btn" type="submit"> Registrarse </button> -->
+                        @Html.ActionLink("Registrarse", "Login", "usuarios", null, new { @class = "btn login100-form-btn" })
                     </div>
 
                 </form>
