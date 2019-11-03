@@ -145,9 +145,29 @@ namespace TaskNote.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        public  IActionResult ActualizacionUsuario()
+        {
+            return View();
+        }
+
+        public IActionResult Registrar()
+        {
+            return View();
+        }
+
+        public IActionResult Login()
+        {
+            return View();
+        }
+
         private bool UsuarioExists(Guid id)
         {
             return _context.Usuarios.Any(e => e.ID == id);
         }
+
+     
+
+
+
     }
 }

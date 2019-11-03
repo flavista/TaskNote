@@ -1,0 +1,64 @@
+﻿@page
+@model TaskNote.Models.Usuario;
+@{
+    Layout = "_Layout_Usuario";
+}
+    <div class="limiter">
+        <div class="container-login100">
+            <div class="wrap-login100">
+                <div class="login100-pic js-tilt" "data-tilt">
+                    <img src="~/Images/TaskNote-LogoGris.png" alt="IMG">
+                </div>
+
+                <form class="login100-form validate-form" name="my-form" onsubmit="return validform()" action="success.php" method="">
+
+                    <div class="wrap-input100 validate-input">
+                        <div class="col-md-16">
+                            <input class="input100" type="text" id="user_name" placeholder="Usuario" name="username">
+                        </div>
+                    </div>
+
+                    <div class="wrap-input100 validate-input">
+                        <div class="col-md-16">
+                            <input class="input100" type="text" id="full_name" placeholder="Nombre" name="full-name">
+                        </div>
+                    </div>
+
+                    <div class="wrap-input100 validate-input">
+                        <div class="col-md-16">
+                            <input class="input100" type="text" id="full_name" placeholder="Apellido" name="full-name">
+                        </div>
+                    </div>
+
+                    <div class="wrap-input100 validate-input">
+                        <div class="col-md-16">
+                            <input class="input100" type="text" id="email_address" placeholder="Email" name="email-address">
+                        </div>
+                    </div>
+
+                    <div class="wrap-input100 validate-input" data-validate="Password is required">
+                        <input class="input100" type="password" name="pass" placeholder="Contraseña">
+                        <span class="focus-input100"></span>
+                        <span class="symbol-input100">
+                            <i class="fa fa-lock" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <div class="wrap-input100 validate-input" data-validate="Password is required">
+                        <input class="input100" type="password" name="pass" placeholder="Confirmar contraseña">
+                        <span class="focus-input100"></span>
+                        <span class="symbol-input100">
+                            <i class="fa fa-lock" aria-hidden="true"></i>
+                        </span>
+                    </div>
+
+
+                    <div class="wrap-input100 validate-input">
+                        <button class="login100-form-btn" type="submit">
+                            Registrarse
+                        </button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
