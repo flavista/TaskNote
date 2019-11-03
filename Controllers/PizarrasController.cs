@@ -150,6 +150,8 @@ namespace TaskNote.Controllers
             return View();
         }
 
+ 
+
 
 
         private bool PizarraExists(Guid id)

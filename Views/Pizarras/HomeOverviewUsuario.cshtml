@@ -1,93 +1,47 @@
 ﻿@page
-@model TaskNote.Views.Pizarras.HomeOverviewUsuarioModel
+@model TaskNote.Models.Pizarra;
+
 @{
+    Layout = "_Layout_Overviews";
 }
-@{
-    Layout = null;
-}
-<!DOCTYPE html>
-<html lang="es">
 
-<head>
-    <meta charset=utf-8 />
-    <title>TaskNote</title>
-    <!-- este le da el formato de navbar-->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<nav class="navbar navbar-expand-lg navbar-light bg-light text-center">
+    <div style="width:120px">
+        <a class="navbar-brand" href="#"><img src="~/Images/TaskNote-LogoGris.png" style="width: 120%"></a>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-</head>
-
-<body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light text-center">
-        <div style="width:120px">
-            <a class="navbar-brand" href="#"><img src="~/Images/TaskNote-LogoGris.png" style="width: 120%"></a>
-        </div>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-            <ul class="navbar-nav ml-auto mx-auto">
-                <li class="nav-item active">
-                    <div>
-                        <!--20 botones es lo max que entra en 1 fila en mi pantalla completa-->
-                        <a class="navbar-brand" href="#" title="Crear pizarra Personal"><img src="~/Images/Icono_pizarra_personal.png" style="width: 80%"></a>
-                        <a class="navbar-brand" href="#" title="Crear pizarra Empresarial"><img src="~/Images/Icono_pizarra_empresarial.png" style="width: 80%"></a>
-                        <a class="navbar-brand" href="#" title="Crear pizarra Educativa"><img src="~/Images/Icono_pizarra_educativa.png" style="width: 80%"></a>
-                    </div>
-                </li>
-            </ul>
-            <!--
-            </div> -->
-
-            <div class="btn-group dropleft" style="float:right">
-                <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
-                    NA
-                </button>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="Login.html">Cerrar sesion</a>
-                    <a class="dropdown-item" href="ConfigUsuario.html">Editar perfil</a>
+        <ul class="navbar-nav ml-auto mx-auto">
+            <li class="nav-item active">
+                <div>
+                    <!--20 botones es lo max que entra en 1 fila en mi pantalla completa-->
+                    <a class="navbar-brand" href="#" title="Crear pizarra Personal"><img src="~/Images/Icono_pizarra_personal.png" style="width: 80%"></a>
+                    <a class="navbar-brand" href="#" title="Crear pizarra Empresarial"><img src="~/Images/Icono_pizarra_empresarial.png" style="width: 80%"></a>
+                    <a class="navbar-brand" href="#" title="Crear pizarra Educativa"><img src="~/Images/Icono_pizarra_educativa.png" style="width: 80%"></a>
                 </div>
+            </li>
+        </ul>
+
+
+        <div class="btn-group dropleft" style="float:right">
+            <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                NA
+            </button>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="Login.html">Cerrar sesion</a>
+                <a class="dropdown-item" href="ConfigUsuario.html">Editar perfil</a>
             </div>
-           
         </div>
 
+    </div>
+
+</nav>
 
 
-        </div>
-    </nav>
 
-
-    <!--lo agregue de la web de bootstrap porque sino no me andaba el dropdown del navbar https://getbootstrap.com/docs/4.3/getting-started/download/ -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-            crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-            crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-            crossorigin="anonymous"></script>
-    <script type="text/javascript">
-        function tachar() {
-            var boton = $("#BP1");
-            boton.css({
-                'color': 'red',
-                'text-decoration': 'line-through'
-            });
-        }
-        function destachar() {
-            var boton = $("#BP1");
-            boton.css({
-                'color': 'white',
-                'text-decoration': 'none'
-            });
-        }
-    </script>
-</body>
-
-</html>

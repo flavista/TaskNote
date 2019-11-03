@@ -1,0 +1,55 @@
+﻿@page
+@model TaskNote.Models.Contenedor;
+@{
+      Layout = "_Layout_Overviews";
+}
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light text-center">
+        <div style="width:120px">
+            <a class="navbar-brand" href="#"><img src="~/Images/TaskNote-LogoGris.png" style="width: 120%"></a>
+        </div>
+
+        &nbsp &nbsp &nbsp
+        <div>
+            <span style="color:#6c757d;">&nbsp&nbspNOMBRE DE LA PIZARRA &nbsp</span>
+           
+        </div>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+            <ul class="navbar-nav ml-auto mx-auto">
+
+
+                <li class="nav-item active">
+                    <div>
+                        <!--20 botones es lo max que entra en 1 fila en mi pantalla completa-->
+
+                        <button id="BP1" type="button" class="btn btn-secondary btn-circle btn-md" onmouseover="tachar()" onmouseout="destachar()" title="Quitar?">NA</button>
+                        <button id="BP2" type="button" class="btn btn-secondary btn-circle btn-md" onmouseover="tachar()" onmouseout="destachar()" title="Quitar?">NA</button>
+                        <button id="BP3" type="button" class="btn btn-secondary btn-circle btn-md">NA</button>
+                        <button id="BP4" type="button" class="btn btn-secondary btn-circle btn-md">NA</button>
+                        <a class="navbar-brand" href="#"><span style="color:#6c757d;"><img src="~/Images/Icono_opciones.png" style="width: 80%, margin-top: 5px;"></a>
+                    </div>
+                </li>
+            </ul>
+
+
+            <div class="btn-group dropleft" style="float:right">
+                <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                    NA
+                </button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="Login.html">Cerrar sesion</a>
+                    <a class="dropdown-item" href="ConfigUsuario.html">Editar perfil</a>
+                </div>
+            </div>
+    
+        </div>
+
+    </nav>
