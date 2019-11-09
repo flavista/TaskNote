@@ -9,12 +9,10 @@ namespace TaskNote.Models
     public class Tarjeta
     {
         public Guid ID { get; set; }
-        public Estilo Estilo { get; set; }
         public String Titulo { get; set; }
         public DateTime FechaInicio { get; set; }
         public DateTime FechaFin { get; set; }
-        public Estado Estado { get; set; }
-        public String Comentarios { get; set; }
+        public String Descripcion { get; set; }
 
         public Guid ContenedorID { get; set; }
         public virtual Contenedor Contenedor { get; set; }

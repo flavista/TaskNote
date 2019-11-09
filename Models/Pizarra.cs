@@ -6,15 +6,13 @@ using TaskNote.Models;
 namespace TaskNote.Models
 
 { 
-    public enum TipoPizarra { Empresa, Personal, Educacion }
     public class Pizarra
     {
         public Guid ID { get; set; }
-        public TipoPizarra TipoPizarra { get; set; }
-        public List<Estilo> Estilos { get; set; }
-        public List<Contenedor> Contenedor { get; set; }
-        public List<Usuario> Usuario { get; set; }
-        // testing 
+        public String Nombre { get; set; }
+        public ICollection<Contenedor> Contenedor { get; set; }
+        public virtual ICollection<UsuarioPizarra> UsuarioPizarra { get; set; }
+        
 
     }
 }

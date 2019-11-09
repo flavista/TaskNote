@@ -6,6 +6,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Views\ActualizacionUsuario\**" />
+    <Content Remove="Views\ActualizacionUsuario\**" />
+    <EmbeddedResource Remove="Views\ActualizacionUsuario\**" />
+    <None Remove="Views\ActualizacionUsuario\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Remove="Migrations\20191029221732_TaskNote.cs" />
     <Compile Remove="Migrations\20191029221732_TaskNote.Designer.cs" />
   </ItemGroup>
@@ -14,6 +21,7 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Workspaces" Version="3.3.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.2.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.2.0" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.4" />
@@ -28,7 +36,7 @@
 
 
   <ItemGroup>
-    <Folder Include="Views\ActualizacionUsuario\" />
+    <Folder Include="Migrations\" />
   </ItemGroup>
 
 </Project>

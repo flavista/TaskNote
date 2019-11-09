@@ -13,7 +13,7 @@ namespace TaskNote.Models
     {
         public Guid ID { get; set; }
         public String Nombre { get; set; }
-        public List<Tarjeta> Tarjetas { get; set; }
+        public ICollection<Tarjeta> Tarjetas { get; set; }
 
         public Guid PizarraId { get; set; }
         public virtual Pizarra Pizarra { get; set; }
