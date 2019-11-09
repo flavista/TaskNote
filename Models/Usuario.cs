@@ -7,17 +7,14 @@ namespace TaskNote.Models
 {
     public class Usuario
     {
-        public Guid ID { get; set; }
-        public String Nombre { get; set; }
-        public String Apellido { get; set; }
-        public String Email { get; set; }
-        public DateTime Nacimiento { get; set; }
-        public String NombreUsuario { get; set; }
-        public String Password { get; set; }
-        public virtual ICollection<UsuarioPizarra> UsuarioPizarra{ get; set; }
+        public Guid Id { get; set; }
+        public string Nombre { get; set; }
+        public string Apellido { get; set; }
+        public string Email { get; set; }
+        public DateTime FechaNacimiento { get; set; }
+        public string NombreUsuario { get; set; }
+        public string Password { get; set; }
 
-
-
-
+        public virtual ICollection<UsuarioPizarra> UsuariosPizarra { get; set; }
     }
 }

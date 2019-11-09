@@ -36,8 +36,8 @@ namespace TaskNote
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
-            services.AddDbContext<TaskNoteContext>(options =>
-            options.UseSqlServer(Configuration.GetConnectionString("TaskNoteContext")));
+            services.AddDbContext<TaskNoteDbContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("TaskNoteContext")));
 
         }
 

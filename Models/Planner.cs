@@ -7,7 +7,7 @@ namespace TaskNote.Models
 {
     public class Planner
     {
-        public Guid ID { get; set; }
-        public ICollection<Usuario> Usuario { get; set; }
+        public Guid Id { get; set; }
+        public virtual ICollection<Usuario> Usuario { get; set; }
     }
 }

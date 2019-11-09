@@ -11,9 +11,9 @@ namespace TaskNote.Controllers
 {
     public class PizarrasController : Controller
     {
-        private readonly TaskNoteContext _context;
+        private readonly TaskNoteDbContext _context;
 
-        public PizarrasController(TaskNoteContext context)
+        public PizarrasController(TaskNoteDbContext context)
         {
             _context = context;
         }
@@ -33,7 +33,7 @@ namespace TaskNote.Controllers
             }
 
             var pizarra = await _context.Pizarras
-                .FirstOrDefaultAsync(m => m.ID == id);
+                .FirstOrDefaultAsync(m => m.Id == id);
             if (pizarra == null)
             {
                 return NotFound();
@@ -53,11 +53,11 @@ namespace TaskNote.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,Nombre")] Pizarra pizarra)
+        public async Task<IActionResult> Create([Bind("Id,Nombre")] Pizarra pizarra)
         {
             if (ModelState.IsValid)
             {
-                pizarra.ID = Guid.NewGuid();
+                pizarra.Id = Guid.NewGuid();
                 _context.Add(pizarra);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -86,9 +86,9 @@ namespace TaskNote.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(Guid id, [Bind("ID,Nombre")] Pizarra pizarra)
+        public async Task<IActionResult> Edit(Guid id, [Bind("Id,Nombre")] Pizarra pizarra)
         {
-            if (id != pizarra.ID)
+            if (id != pizarra.Id)
             {
                 return NotFound();
             }
@@ -102,7 +102,7 @@ namespace TaskNote.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!PizarraExists(pizarra.ID))
+                    if (!PizarraExists(pizarra.Id))
                     {
                         return NotFound();
                     }
@@ -125,7 +125,7 @@ namespace TaskNote.Controllers
             }
 
             var pizarra = await _context.Pizarras
-                .FirstOrDefaultAsync(m => m.ID == id);
+                .FirstOrDefaultAsync(m => m.Id == id);
             if (pizarra == null)
             {
                 return NotFound();
@@ -147,7 +147,7 @@ namespace TaskNote.Controllers
 
         private bool PizarraExists(Guid id)
         {
-            return _context.Pizarras.Any(e => e.ID == id);
+            return _context.Pizarras.Any(e => e.Id == id);
         }
     }
 }
